@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>收藏排行榜</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/common.css" th:href="@{/css/common.css}">
+    <link rel="stylesheet" type="text/css" href="../static/css/ranking-list.css" th:href="@{/css/ranking-list.css}">
+    <script src="../static/js/jsLibrary/jquery-3.3.1.js" th:src="@{/js/jsLibrary/jquery-3.3.1.js}"></script>
+    <script src="../static/js/getParameter.js" th:src="@{/js/getParameter.js}"></script>
+    <script src="../static/js/favoriteRankJs.js" th:src="@{/js/favoriteRankJs.js}"></script>
+</head>
+
+<body>
+<!--引入头部-->
+<div th:replace="/header::#headerDiv"></div>
+
+<div class="contant">
+    <div class="shaixuan">
+        <span>线路名称</span>
+        <input type="text" id="routeName">
+        <span>金额</span>
+        <input type="text" id="lowPrice">~<input type="text" id="highPrice">
+        <button id="searchButton">搜索</button>
+    </div>
+    <div class="list clearfix">
+        <ul id="favoritesRank">
+        </ul>
+    </div>
+    <div class="page_num_inf">
+        <i>共</i>
+        <span id="totalPage">12</span>页<span id="totalCount">132</span>条
+    </div>
+    <div class="pageNum">
+        <ul id="pageNum">
+        </ul>
+    </div>
+</div>
+
+<!--引入尾部-->
+<div th:replace="/footer::#footerDiv"></div>
+</body>
+</html>

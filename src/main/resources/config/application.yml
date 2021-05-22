@@ -1,0 +1,59 @@
+# tomcat端口号
+server:
+  port: 8888
+
+#mybatis设置驼峰命名法
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+# 设置日志监控
+logging:
+  level:
+    com.wolfman: debug
+
+# 降低日志级别
+#debug: true
+
+spring:
+  datasource:
+    # 数据源基本配置
+    username: root
+    password: 2001
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring_boot_travel
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 数据源其他配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall,log4j2
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+  # redis主机地址
+  redis:
+    host: localhost
+
+  # 邮件配置
+  mail:
+    username: 2370032534@qq.com
+    password: zjrxxkzzmabyebcj
+    host: smtp.qq.com
+    default-encoding: UTF-8
+
+  # 模板引擎 禁用缓存
+  thymeleaf:
+    cache: false
+
+
